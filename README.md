@@ -2,6 +2,7 @@
 Springboot maven project that will expose a CRUD API
 
 EndPoints:
+
 GET:
 http://localhost:8090/socialNetworkPost/all               -retrieve list of all posts
 
