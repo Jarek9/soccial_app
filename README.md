@@ -32,12 +32,22 @@ To open data base console:
 http://localhost:8090/h2-console
 
 App properties:
+
 spring.datasource.url=jdbc:h2:file:./h2-local-storage/SocialNetworkPostDataBase
+
 spring.datasource.driverClassName=org.h2.Driver
+
 spring.datasource.username=sa
+
 spring.datasource.password=pass
+
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+
 spring.jpa.defer-datasource-initialization=true
+
 spring.h2.console.enabled=true
+
 spring.jpa.properties.hibernate.id.new_generator_mappings=false
+
 server.port=8090
+
