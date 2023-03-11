@@ -16,5 +16,5 @@ public interface SocialNetworkPostService {
 	void deleteSocialNetworkPost(Long PostId);
 	SocialNetworkPost getASingleSocialNetworkPost(Long PostId);
 	List<SocialNetworkPost> getAllSocialNetworkPost();
-//	List<SocialNetworkPost> getTenMostPopularPosts();
+	List<SocialNetworkPost> getTenMostPopularPosts();
 }

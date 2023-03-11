@@ -16,7 +16,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/SocialNetworkPost")
 public class SocialNetworkPostController {
-
+	@Autowired
 	SocialNetworkPostService socialNetworkPostService;
 
 	@GetMapping("/all")
@@ -25,11 +25,11 @@ public class SocialNetworkPostController {
 		return new ResponseEntity<>(socialNetworkPost, HttpStatus.OK);
 	}
 
-//	@GetMapping("/topPosts")
-//	public ResponseEntity<List<SocialNetworkPost>> getTenMostPopularPosts () {
-//		List<SocialNetworkPost> socialNetworkPost = socialNetworkPostService.getTenMostPopularPosts();
-//		return new ResponseEntity<>(socialNetworkPost, HttpStatus.OK);
-//	}
+	@GetMapping("/topPosts")
+	public ResponseEntity<List<SocialNetworkPost>> getTenMostPopularPosts () {
+		List<SocialNetworkPost> socialNetworkPost = socialNetworkPostService.getTenMostPopularPosts();
+		return new ResponseEntity<>(socialNetworkPost, HttpStatus.OK);
+	}
 
 	@GetMapping("/find/{id}")
 	public ResponseEntity<SocialNetworkPost> getSocialNetworkPostById (@PathVariable("id") Long postId) {

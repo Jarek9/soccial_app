@@ -2,7 +2,6 @@ package com.example.soccial_app.service;
 
 import org.apache.velocity.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.example.soccial_app.model.SocialNetworkPost;
@@ -58,10 +57,10 @@ public class SocialNetworkPostServiceImpl implements SocialNetworkPostService {
 		return socialNetworkPostRepository.findAll();
 	}
 
-//	@Override
-//	public List<SocialNetworkPost> getTenMostPopularPosts() {
-//		return socialNetworkPostRepository.findTopPosts("SELECT * FROM SOCIAL_NETWORK_POST ORDER BY VIEW_COUNT Desc LIMIT 10");
-//	}
+	@Override
+	public List<SocialNetworkPost> getTenMostPopularPosts() {
+		return socialNetworkPostRepository.findTopPosts();
+	}
 
 	@Override
 	public void deleteSocialNetworkPost(Long postId) throws ResourceNotFoundException {
