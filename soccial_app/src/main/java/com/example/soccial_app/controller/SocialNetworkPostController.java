@@ -14,8 +14,9 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/SocialNetworkPost")
+@RequestMapping("/socialNetworkPost")
 public class SocialNetworkPostController {
+
 	@Autowired
 	SocialNetworkPostService socialNetworkPostService;
 
@@ -31,8 +32,8 @@ public class SocialNetworkPostController {
 		return new ResponseEntity<>(socialNetworkPost, HttpStatus.OK);
 	}
 
-	@GetMapping("/find/{id}")
-	public ResponseEntity<SocialNetworkPost> getSocialNetworkPostById (@PathVariable("id") Long postId) {
+	@GetMapping("/find/{postId}")
+	public ResponseEntity<SocialNetworkPost> getSocialNetworkPostById (@PathVariable("postId") Long postId) {
 		SocialNetworkPost socialNetworkPost = socialNetworkPostService.getASingleSocialNetworkPost(postId);
 		return new ResponseEntity<>(socialNetworkPost, HttpStatus.OK);
 	}

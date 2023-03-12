@@ -16,8 +16,12 @@ import java.util.Optional;
 @Service
 public class SocialNetworkPostServiceImpl implements SocialNetworkPostService {
 
-	@Autowired
-	SocialNetworkPostRepository socialNetworkPostRepository;
+	private final SocialNetworkPostRepository socialNetworkPostRepository;
+
+	public SocialNetworkPostServiceImpl(SocialNetworkPostRepository socialNetworkPostRepository) {
+		super();
+		this.socialNetworkPostRepository = socialNetworkPostRepository;
+	}
 
 	@Override
 	public MessageResponse createSocialNetworkPost(SocialNetworkPostRequest socialNetworkPostRequest) {
@@ -49,7 +53,7 @@ public class SocialNetworkPostServiceImpl implements SocialNetworkPostService {
 
 	@Override
 	public SocialNetworkPost getASingleSocialNetworkPost(Long postId) throws ResourceNotFoundException{
-		return socialNetworkPostRepository.findById(postId).orElseThrow(() -> new ResourceNotFoundException("Can not update socialNetworkPost = " + postId));
+		return socialNetworkPostRepository.findById(postId).orElseThrow(() -> new ResourceNotFoundException("Can not find socialNetworkPost = " + postId));
 	}
 
 	@Override

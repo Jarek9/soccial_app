@@ -11,6 +11,6 @@ import java.util.List;
 @Repository
 public interface SocialNetworkPostRepository extends JpaRepository<SocialNetworkPost, Long> {
 
-@Query (value="SELECT * FROM SOCIAL_NETWORK_POST ORDER BY VIEW_COUNT Desc LIMIT 10", nativeQuery = true)
+	@Query (value="SELECT * FROM SOCIAL_NETWORK_POST ORDER BY VIEW_COUNT Desc LIMIT 10", nativeQuery = true)
 	List<SocialNetworkPost> findTopPosts();
 }
