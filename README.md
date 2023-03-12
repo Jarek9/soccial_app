@@ -34,6 +34,10 @@ http://localhost:8090/h2-console
 
 App properties:
 
+spring.sql.init.mode=always
+
+spring.sql.init.platform=h2
+
 spring.datasource.url=jdbc:h2:file:./h2-local-storage/SocialNetworkPostDataBase
 
 spring.datasource.driverClassName=org.h2.Driver
