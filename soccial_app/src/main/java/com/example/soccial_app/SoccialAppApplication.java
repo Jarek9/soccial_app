@@ -13,6 +13,7 @@ import com.example.soccial_app.repository.SocialNetworkPostRepository;
 
 @SpringBootApplication
 public class SoccialAppApplication {
+
 	@Autowired
 	private SocialNetworkPostRepository socialNetworkPostRepository;
 
